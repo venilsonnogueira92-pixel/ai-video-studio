@@ -1,0 +1,32 @@
+name: Gerar video
+
+on:
+  workflow_dispatch:
+
+jobs:
+  gerar-video:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar projeto
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          pip install -r requisitos.txt
+
+      - name: Gerar video
+        run: python make_short.py
+
+      - name: Salvar video gerado
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-final
+          path: saida/video_final.mp4
