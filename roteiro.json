@@ -1,0 +1,14 @@
+{
+  "titulo": "Meu primeiro vídeo",
+  "idioma": "pt-BR",
+  "cenas": [
+    {
+      "texto": "Olá! Bem-vindo ao AI VIDEO STUDIO.",
+      "duracao": 10
+    },
+    {
+      "texto": "Este vídeo foi criado com inteligência artificial.",
+      "duracao": 10
+    }
+  ]
+}
